@@ -8,3 +8,8 @@ Link `zshrc` as `~/.zshrc`. Extra packages are in `~/.zsh/`:
 - optionally https://github.com/direnv/direnv
 
 Use `~/.zsh/zshrc_local_pre.zsh` to set variables required for `zshrc`
+
+
+## tmux
+
+Install https://github.com/tmux-plugins/tpm.
