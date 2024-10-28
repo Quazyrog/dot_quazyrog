@@ -1,0 +1,40 @@
+#!/bin/env python3.8
+import sys
+import os
+
+limit = int(sys.argv[1])
+lcost, rcost = (int(x) for x in sys.argv[2].split(":"))
+spl = sys.argv[3].split("/")
+
+li = 0
+lc = 0
+ri = len(spl) - 1
+rc = 0
+tot = 7
+l = []
+r = []
+
+lcan = rcan = True
+while li <= ri and (lcan or rcan):
+    if lc + lcost < rc + rcost:
+        lc += lcost
+        if tot + len(spl[li]) + 1 <= limit:
+            l.append(spl[li])
+            tot += len(spl[li]) + 1
+            li += 1
+            continue
+        else:
+            lcan = False
+    rc += rcost
+    if tot + len(spl[ri]) + 1 <= limit:
+        r.append(spl[ri])
+        tot += len(spl[ri]) + 1
+        ri -= 1
+        continue
+    else:
+        rcan = False
+
+out = os.path.join(*(l + ([] if li > ri else ["(...)"]) + r[::-1]))
+if sys.argv[3].startswith("/"):
+    out = "/" + out
+print(out)
