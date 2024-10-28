@@ -171,7 +171,7 @@ if [[ ! "$PATH" == *$HOME/.zsh/fzf/bin* ]]; then
 fi
 source <(fzf --zsh)
 # https://github.com/direnv/direnv  (optional)
-type direnv && eval "$(direnv hook zsh)"
+type direnv >/dev/null && eval "$(direnv hook zsh)"
 
 ############################################################# END ##############################################################
 
