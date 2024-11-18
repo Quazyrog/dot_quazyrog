@@ -72,9 +72,10 @@ bindkey "^[[1;5D" backward-word
 
 
 ############################################################ PROMPT ############################################################
-fgColor=${fgColor:-yellow}
-bgColor=${bgColor:-yellow}
-bfgColor=${bfgColor:-black}
+# see https://ss64.com/bash/syntax-colors.html
+fgColor=${fgColor:-027}
+bgColor=${bgColor:-008}
+bfgColor=${bfgColor:-021}
 
 precmd ()
 {
