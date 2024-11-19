@@ -70,6 +70,7 @@ bindkey '^[^M' self-insert-unmeta
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+bindkey -v
 
 ############################################################ PROMPT ############################################################
 # see https://ss64.com/bash/syntax-colors.html
